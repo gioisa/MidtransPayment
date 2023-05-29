@@ -1,0 +1,51 @@
+﻿@page "/User"
+
+<PageTitle>User</PageTitle>
+
+<section class="position-relative">
+    <Loader IsLoading="@_ItemLoading"/>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Fullname</th>
+                <th>Mail</th>
+                <th>Phone Number</th>
+                <th>Status</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (_UserItems.Count == 0)
+            {
+                <tr><td colspan="6" class="text-center">No Data.</td></tr>
+            }
+
+            @foreach (var item in _UserItems)
+            {
+                <tr>
+                    <td>@item.Username</td>
+                    <td>@item.Fullname</td>
+                    <td>@item.Mail</td>
+                    <td>@item.PhoneNumber</td>
+                    <td>@item.Status</td>
+                    <td>
+                        @("-")
+                        @*<div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="@item.Id" data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown button
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="@item.Id">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div>*@
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</section>

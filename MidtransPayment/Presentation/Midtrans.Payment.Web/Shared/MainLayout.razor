@@ -1,0 +1,33 @@
+﻿@inherits LayoutComponentBase
+
+<CascadingValue Value="this">
+    <div class="page">
+        <div class="sidebar">
+            <AuthorizeView>
+                <Authorized>
+                    <NavMenu />
+                </Authorized>
+            </AuthorizeView>
+        </div>
+
+        <main>
+            <div class="top-row px-4">
+                <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+                <a href="/Auth/Logout">Logout</a>
+            </div>
+
+            <article class="content px-4">
+                <AuthorizeView>
+                    <Authorized>
+                        @Body
+                    </Authorized>
+                    <NotAuthorized>
+                        @{
+                            _NavManager.NavigateTo("/Auth/Login", true);
+                        }
+                    </NotAuthorized>
+                </AuthorizeView>
+            </article>
+        </main>
+    </div>
+</CascadingValue>

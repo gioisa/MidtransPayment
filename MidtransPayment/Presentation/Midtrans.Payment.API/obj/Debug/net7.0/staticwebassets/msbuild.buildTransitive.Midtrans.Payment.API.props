@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Midtrans.Payment.API.props" />
+</Project>

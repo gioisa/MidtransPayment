@@ -1,0 +1,52 @@
+﻿@page "/Auth/Login"
+
+@layout EmptyLayout
+
+<PageTitle>Login</PageTitle>
+
+<div class="container min-height-100vh">
+    <div class="d-flex min-height-100vh justify-content-center align-items-center">
+        <div class="card rounded-0 login-card">
+            <div class="card-header">
+                <h4 class="card-title">Login</h4>
+            </div>
+
+            <div class="card-body rounded-0">
+                <div class="position-relative">
+                    <Loader IsLoading="@_IsLoading" />
+
+                    <EditForm Model="@_LoginFormModel" OnValidSubmit="@(() => DoLogin())">
+                        <DataAnnotationsValidator />
+
+                        <div class="mb-3">
+                            <label class="mb-1">Username</label>
+                            <InputText @bind-Value="_LoginFormModel.Username" class="form-control" />
+                            <ValidationMessage For="@(() => _LoginFormModel.Username)" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="mb-1">Password</label>
+                            <InputText type="password" @bind-Value="_LoginFormModel.Password" class="form-control" />
+                            <ValidationMessage For="@(() => _LoginFormModel.Password)" />
+                        </div>
+
+                        <div class="mb-1">
+                            <button type="submit" class="btn btn-block btn-primary">Login</button>
+                        </div>
+                    </EditForm>
+
+                    @if (_IsError)
+                    {
+                        <div class="alert alert-danger" role="alert">
+                            @_MessageError
+                        </div>
+                    }
+
+                    <hr />
+
+                    <a href="/Auth/Register" class="text-center">Register</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

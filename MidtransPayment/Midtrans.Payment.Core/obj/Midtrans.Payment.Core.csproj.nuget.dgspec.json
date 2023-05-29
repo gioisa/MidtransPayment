@@ -1,0 +1,364 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\giois\\source\\repos\\MidtransPayment\\MidtransPayment\\Midtrans.Payment.Core\\Midtrans.Payment.Core.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\giois\\source\\repos\\MidtransPayment\\MidtransPayment\\Infrastructure\\Midtrans.Payment.Infrastructure.Mail\\Midtrans.Payment.Infrastructure.Mail.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\giois\\source\\repos\\MidtransPayment\\MidtransPayment\\Infrastructure\\Midtrans.Payment.Infrastructure.Mail\\Midtrans.Payment.Infrastructure.Mail.csproj",
+        "projectName": "Midtrans.Payment.Infrastructure.Mail",
+        "projectPath": "C:\\Users\\giois\\source\\repos\\MidtransPayment\\MidtransPayment\\Infrastructure\\Midtrans.Payment.Infrastructure.Mail\\Midtrans.Payment.Infrastructure.Mail.csproj",
+        "packagesPath": "C:\\Users\\giois\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\giois\\source\\repos\\MidtransPayment\\MidtransPayment\\Infrastructure\\Midtrans.Payment.Infrastructure.Mail\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\giois\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\giois\\source\\repos\\MidtransPayment\\MidtransPayment\\Midtrans.Payment.Shared\\Midtrans.Payment.Shared.csproj": {
+                "projectPath": "C:\\Users\\giois\\source\\repos\\MidtransPayment\\MidtransPayment\\Midtrans.Payment.Shared\\Midtrans.Payment.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\giois\\source\\repos\\MidtransPayment\\MidtransPayment\\Midtrans.Payment.Core\\Midtrans.Payment.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\giois\\source\\repos\\MidtransPayment\\MidtransPayment\\Midtrans.Payment.Core\\Midtrans.Payment.Core.csproj",
+        "projectName": "Midtrans.Payment.Core",
+        "projectPath": "C:\\Users\\giois\\source\\repos\\MidtransPayment\\MidtransPayment\\Midtrans.Payment.Core\\Midtrans.Payment.Core.csproj",
+        "packagesPath": "C:\\Users\\giois\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\giois\\source\\repos\\MidtransPayment\\MidtransPayment\\Midtrans.Payment.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\giois\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\giois\\source\\repos\\MidtransPayment\\MidtransPayment\\Infrastructure\\Midtrans.Payment.Infrastructure.Mail\\Midtrans.Payment.Infrastructure.Mail.csproj": {
+                "projectPath": "C:\\Users\\giois\\source\\repos\\MidtransPayment\\MidtransPayment\\Infrastructure\\Midtrans.Payment.Infrastructure.Mail\\Midtrans.Payment.Infrastructure.Mail.csproj"
+              },
+              "C:\\Users\\giois\\source\\repos\\MidtransPayment\\MidtransPayment\\Midtrans.Payment.Data\\Midtrans.Payment.Data.csproj": {
+                "projectPath": "C:\\Users\\giois\\source\\repos\\MidtransPayment\\MidtransPayment\\Midtrans.Payment.Data\\Midtrans.Payment.Data.csproj"
+              },
+              "C:\\Users\\giois\\source\\repos\\MidtransPayment\\MidtransPayment\\Midtrans.Payment.Shared\\Midtrans.Payment.Shared.csproj": {
+                "projectPath": "C:\\Users\\giois\\source\\repos\\MidtransPayment\\MidtransPayment\\Midtrans.Payment.Shared\\Midtrans.Payment.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "Hangfire.Core": {
+              "target": "Package",
+              "version": "[1.7.34, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "MimeTypeMapOfficial": {
+              "target": "Package",
+              "version": "[1.0.17, )"
+            },
+            "Sylvan.Data.Excel": {
+              "target": "Package",
+              "version": "[0.4.10, )"
+            },
+            "System.Linq.Dynamic.Core": {
+              "target": "Package",
+              "version": "[1.3.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\giois\\source\\repos\\MidtransPayment\\MidtransPayment\\Midtrans.Payment.Data\\Midtrans.Payment.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\giois\\source\\repos\\MidtransPayment\\MidtransPayment\\Midtrans.Payment.Data\\Midtrans.Payment.Data.csproj",
+        "projectName": "Midtrans.Payment.Data",
+        "projectPath": "C:\\Users\\giois\\source\\repos\\MidtransPayment\\MidtransPayment\\Midtrans.Payment.Data\\Midtrans.Payment.Data.csproj",
+        "packagesPath": "C:\\Users\\giois\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\giois\\source\\repos\\MidtransPayment\\MidtransPayment\\Midtrans.Payment.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\giois\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "EntityFrameworkCore.Scaffolding.Handlebars": {
+              "target": "Package",
+              "version": "[6.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.15, )"
+            },
+            "Microsoft.EntityFrameworkCore.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.15, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "target": "Package",
+              "version": "[6.0.15, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[6.0.15, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.15, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "Vleko.DAL": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\giois\\source\\repos\\MidtransPayment\\MidtransPayment\\Midtrans.Payment.Shared\\Midtrans.Payment.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\giois\\source\\repos\\MidtransPayment\\MidtransPayment\\Midtrans.Payment.Shared\\Midtrans.Payment.Shared.csproj",
+        "projectName": "Midtrans.Payment.Shared",
+        "projectPath": "C:\\Users\\giois\\source\\repos\\MidtransPayment\\MidtransPayment\\Midtrans.Payment.Shared\\Midtrans.Payment.Shared.csproj",
+        "packagesPath": "C:\\Users\\giois\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\giois\\source\\repos\\MidtransPayment\\MidtransPayment\\Midtrans.Payment.Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\giois\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "DocumentFormat.OpenXml": {
+              "target": "Package",
+              "version": "[2.19.0, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Binder": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.Extensions.Configuration.FileExtensions": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

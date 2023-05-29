@@ -1,0 +1,14 @@
+C:\Users\giois\source\repos\MidtransPayment\MidtransPayment\Midtrans.Payment.Data\bin\Debug\net7.0\Midtrans.Payment.Data.deps.json
+C:\Users\giois\source\repos\MidtransPayment\MidtransPayment\Midtrans.Payment.Data\bin\Debug\net7.0\Midtrans.Payment.Data.runtimeconfig.json
+C:\Users\giois\source\repos\MidtransPayment\MidtransPayment\Midtrans.Payment.Data\bin\Debug\net7.0\Midtrans.Payment.Data.dll
+C:\Users\giois\source\repos\MidtransPayment\MidtransPayment\Midtrans.Payment.Data\bin\Debug\net7.0\Midtrans.Payment.Data.pdb
+C:\Users\giois\source\repos\MidtransPayment\MidtransPayment\Midtrans.Payment.Data\obj\Debug\net7.0\Midtrans.Payment.Data.csproj.AssemblyReference.cache
+C:\Users\giois\source\repos\MidtransPayment\MidtransPayment\Midtrans.Payment.Data\obj\Debug\net7.0\Midtrans.Payment.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\giois\source\repos\MidtransPayment\MidtransPayment\Midtrans.Payment.Data\obj\Debug\net7.0\Midtrans.Payment.Data.AssemblyInfoInputs.cache
+C:\Users\giois\source\repos\MidtransPayment\MidtransPayment\Midtrans.Payment.Data\obj\Debug\net7.0\Midtrans.Payment.Data.AssemblyInfo.cs
+C:\Users\giois\source\repos\MidtransPayment\MidtransPayment\Midtrans.Payment.Data\obj\Debug\net7.0\Midtrans.Payment.Data.csproj.CoreCompileInputs.cache
+C:\Users\giois\source\repos\MidtransPayment\MidtransPayment\Midtrans.Payment.Data\obj\Debug\net7.0\Midtrans.Payment.Data.dll
+C:\Users\giois\source\repos\MidtransPayment\MidtransPayment\Midtrans.Payment.Data\obj\Debug\net7.0\refint\Midtrans.Payment.Data.dll
+C:\Users\giois\source\repos\MidtransPayment\MidtransPayment\Midtrans.Payment.Data\obj\Debug\net7.0\Midtrans.Payment.Data.pdb
+C:\Users\giois\source\repos\MidtransPayment\MidtransPayment\Midtrans.Payment.Data\obj\Debug\net7.0\Midtrans.Payment.Data.genruntimeconfig.cache
+C:\Users\giois\source\repos\MidtransPayment\MidtransPayment\Midtrans.Payment.Data\obj\Debug\net7.0\ref\Midtrans.Payment.Data.dll
