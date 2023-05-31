@@ -40,4 +40,5 @@ namespace Midtrans.Payment.Infrastructure.Mail.Object
         public string merchant_id { get; set; }
         public string acquirer { get; set; }
     }
+
 }
