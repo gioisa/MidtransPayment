@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Midtrans.Payment.API", "Mid
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Midtrans.Payment.Web", "MidtransPayment\Presentation\Midtrans.Payment.Web\Midtrans.Payment.Web.csproj", "{19AB35DD-51C3-4B84-95F2-8B1153D5EC9B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Midtrans.Payment.Webview", "MidtransPayment\Presentation\Midtrans.Payment.Webview\Midtrans.Payment.Webview.csproj", "{60B038C8-20EB-416B-B0A9-E363999CFEB4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{19AB35DD-51C3-4B84-95F2-8B1153D5EC9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19AB35DD-51C3-4B84-95F2-8B1153D5EC9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19AB35DD-51C3-4B84-95F2-8B1153D5EC9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60B038C8-20EB-416B-B0A9-E363999CFEB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60B038C8-20EB-416B-B0A9-E363999CFEB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60B038C8-20EB-416B-B0A9-E363999CFEB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60B038C8-20EB-416B-B0A9-E363999CFEB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,6 +69,7 @@ Global
 		{CFE4E75F-8C26-40B1-93FC-788CFB41EA60} = {45AF5D8F-523C-48A1-9F61-35A91CDC7826}
 		{F57DA6A5-1E94-4D1C-B583-5B91208F942B} = {591B375B-52FF-428A-A6F8-67F8E3674DF5}
 		{19AB35DD-51C3-4B84-95F2-8B1153D5EC9B} = {591B375B-52FF-428A-A6F8-67F8E3674DF5}
+		{60B038C8-20EB-416B-B0A9-E363999CFEB4} = {591B375B-52FF-428A-A6F8-67F8E3674DF5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F7ACD831-2623-4EF8-9887-0021D1785AA6}

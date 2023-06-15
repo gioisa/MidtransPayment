@@ -15,7 +15,7 @@ dotnet tool update --global dotnet-ef
 ### 2.Scaffolding 
 setelah mengeksekusi install tool kemudian ketik/copy code berikut :
 ```scaffold
-dotnet ef dbcontext scaffold "Data Source=localhost;Initial Catalog=Midtrans.Payment;Integrated Security=True" Microsoft.EntityFrameworkCore.SqlServer --output-dir "..\Midtrans.Payment.Data\Model" -c ApplicationDBContext --context-dir "..\Midtrans.Payment.Data" --namespace "Midtrans.Payment.Data.Model" --context-namespace "Midtrans.Payment.Data" --no-pluralize -f --no-onconfiguring --schema "dbo"
+dotnet ef dbcontext scaffold "Data Source=mediaindoteknologi.com,5031;Initial Catalog=Homeplate;User Id=sa;Password=antapani@1b" Microsoft.EntityFrameworkCore.SqlServer --output-dir "..\Midtrans.Payment.Data\Model" -c ApplicationDBContext --context-dir "..\Midtrans.Payment.Data" --namespace "Midtrans.Payment.Data.Model" --context-namespace "Midtrans.Payment.Data" --no-pluralize -f --no-onconfiguring --schema "dbo"
 ```
 ganti localhost username dan password apabila ingin merubah koneksi ke server yang dituju.
 

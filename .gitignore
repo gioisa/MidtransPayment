@@ -1,1 +1,9 @@
 .vs/
+MidtransPayment/Presentation/Midtrans.Payment.Webview/bin
+MidtransPayment/Presentation/Midtrans.Payment.Webview/obj
+MidtransPayment/package
+MidtransPayment/.signature.p7s
+MidtransPayment/[Content_Types].xml
+MidtransPayment/Vleko.Solution.CSharp.nuspec
+MidtransPayment/_rels
+MidtransPayment/.vs
