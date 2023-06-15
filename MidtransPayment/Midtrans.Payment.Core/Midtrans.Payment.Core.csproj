@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+		<PackageReference Include="Hangfire.Core" Version="1.7.34" />
+		<PackageReference Include="MediatR" Version="12.0.1" />
+		<PackageReference Include="System.Linq.Dynamic.Core" Version="1.3.1" />
+		<PackageReference Include="Sylvan.Data.Excel" Version="0.4.10" />
+		<PackageReference Include="MimeTypeMapOfficial" Version="1.0.17" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Midtrans.Payment.Data\Midtrans.Payment.Data.csproj" />
+		<ProjectReference Include="..\Midtrans.Payment.Shared\Midtrans.Payment.Shared.csproj" />
+		<ProjectReference Include="..\Infrastructure\Midtrans.Payment.Infrastructure.Mail\Midtrans.Payment.Infrastructure.Mail.csproj" />
+	</ItemGroup>
+
+</Project>

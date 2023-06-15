@@ -1,0 +1,72 @@
+﻿@page "/Auth/Register"
+
+@layout EmptyLayout
+
+<PageTitle>Register</PageTitle>
+
+<div class="container min-height-100vh">
+    <div class="d-flex min-height-100vh justify-content-center align-items-center">
+        <div class="card rounded-0 login-card">
+            <div class="card-header">
+                <h4 class="card-title">Register</h4>
+            </div>
+
+            <div class="card-body rounded-0">
+                <div class="position-relative">
+                    <Loader IsLoading="@_IsLoading" />
+
+                    <EditForm Model="@_RegisterFormModel" OnValidSubmit="@(() => DoRegister())">
+                        <DataAnnotationsValidator />
+
+                        <div class="mb-3">
+                            <label class="mb-1">Fullname</label>
+                            <InputText @bind-Value="_RegisterFormModel.Fullname" class="form-control" />
+                            <ValidationMessage For="@(() => _RegisterFormModel.Fullname)" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="mb-1">Mail</label>
+                            <InputText @bind-Value="_RegisterFormModel.Mail" class="form-control" />
+                            <ValidationMessage For="@(() => _RegisterFormModel.Mail)" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="mb-1">Phone Number</label>
+                            <InputText @bind-Value="_RegisterFormModel.PhoneNumber" class="form-control" />
+                            <ValidationMessage For="@(() => _RegisterFormModel.PhoneNumber)" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="mb-1">Username</label>
+                            <InputText @bind-Value="_RegisterFormModel.Username" class="form-control" />
+                            <ValidationMessage For="@(() => _RegisterFormModel.Username)" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="mb-1">Password</label>
+                            <InputText type="password" @bind-Value="_RegisterFormModel.Password" class="form-control" />
+                            <ValidationMessage For="@(() => _RegisterFormModel.Password)" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="mb-1">Confirm Password</label>
+                            <InputText type="password" @bind-Value="_RegisterFormModel.ConfirmPassword" class="form-control" />
+                            <ValidationMessage For="@(() => _RegisterFormModel.ConfirmPassword)" />
+                        </div>
+
+                        <div class="mb-1">
+                            <button type="submit" class="btn btn-block btn-primary" disabled="@_IsLoading">Register</button>
+                        </div>
+                    </EditForm>
+
+                    @if (_IsError)
+                    {
+                        <div class="alert alert-danger" role="alert">
+                            @_MessageError
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
