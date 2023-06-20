@@ -59,6 +59,8 @@
 
   <ItemGroup>
     <Folder Include="Views\MemberZone\Dashboard\" />
+    <Folder Include="wwwroot\script\AdminZone\" />
+    <Folder Include="wwwroot\script\MemberZone\" />
   </ItemGroup>
 
 </Project>

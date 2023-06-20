@@ -9,10 +9,14 @@ namespace Midtrans.Payment.Data
 {
     public partial class ApplicationDBContext : DbContext
     {
-        public virtual DbSet<MstMidtransResponseTransaction> MstMidtransResponseTransaction { get; set; }
+        public virtual DbSet<MstGuest> MstGuest { get; set; }
         public virtual DbSet<Notification> Notification { get; set; }
+        public virtual DbSet<RefSubscription> RefSubscription { get; set; }
+        public virtual DbSet<RefSubscriptionPack> RefSubscriptionPack { get; set; }
         public virtual DbSet<Repository> Repository { get; set; }
         public virtual DbSet<Role> Role { get; set; }
+        public virtual DbSet<TrsMidtransResponseTransaction> TrsMidtransResponseTransaction { get; set; }
+        public virtual DbSet<TrsSubscription> TrsSubscription { get; set; }
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<UserRole> UserRole { get; set; }
 
@@ -22,9 +26,295 @@ namespace Midtrans.Payment.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<MstMidtransResponseTransaction>(entity =>
+            modelBuilder.Entity<MstGuest>(entity =>
             {
-                entity.ToTable("MST_MIDTRANS_RESPONSE_TRANSACTION");
+                entity.ToTable("MST_GUEST");
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("ID")
+                    .HasDefaultValueSql("(newid())");
+
+                entity.Property(e => e.CreateDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("CREATE_DATE");
+
+                entity.Property(e => e.Email)
+                    .IsRequired()
+                    .HasMaxLength(500)
+                    .IsUnicode(false)
+                    .HasColumnName("EMAIL");
+
+                entity.Property(e => e.FullName)
+                    .IsRequired()
+                    .HasMaxLength(500)
+                    .IsUnicode(false)
+                    .HasColumnName("FULL_NAME");
+
+                entity.Property(e => e.PhoneNumber)
+                    .IsRequired()
+                    .HasMaxLength(100)
+                    .IsUnicode(false)
+                    .HasColumnName("PHONE_NUMBER");
+            });
+
+            modelBuilder.Entity<Notification>(entity =>
+            {
+                entity.ToTable("NOTIFICATION");
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("ID")
+                    .HasDefaultValueSql("(newid())");
+
+                entity.Property(e => e.CreateBy)
+                    .IsRequired()
+                    .HasMaxLength(250)
+                    .IsUnicode(false)
+                    .HasColumnName("CREATE_BY");
+
+                entity.Property(e => e.CreateDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("CREATE_DATE")
+                    .HasDefaultValueSql("(getdate())");
+
+                entity.Property(e => e.Description)
+                    .IsRequired()
+                    .HasMaxLength(250)
+                    .IsUnicode(false)
+                    .HasColumnName("DESCRIPTION");
+
+                entity.Property(e => e.IdUser).HasColumnName("ID_USER");
+
+                entity.Property(e => e.IsOpen).HasColumnName("IS_OPEN");
+
+                entity.Property(e => e.Navigation)
+                    .IsRequired()
+                    .HasMaxLength(250)
+                    .IsUnicode(false)
+                    .HasColumnName("NAVIGATION");
+
+                entity.Property(e => e.Subject)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("SUBJECT");
+
+                entity.Property(e => e.UserFullname)
+                    .IsRequired()
+                    .HasMaxLength(150)
+                    .IsUnicode(false)
+                    .HasColumnName("USER_FULLNAME");
+
+                entity.Property(e => e.UserMail)
+                    .HasMaxLength(150)
+                    .HasColumnName("USER_MAIL");
+
+                entity.Property(e => e.UserPhone)
+                    .HasMaxLength(50)
+                    .HasColumnName("USER_PHONE");
+
+                entity.HasOne(d => d.IdUserNavigation)
+                    .WithMany(p => p.Notification)
+                    .HasForeignKey(d => d.IdUser)
+                    .HasConstraintName("NOTIFICATION_FK");
+            });
+
+            modelBuilder.Entity<RefSubscription>(entity =>
+            {
+                entity.ToTable("REF_SUBSCRIPTION");
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("ID")
+                    .HasDefaultValueSql("(newid())");
+
+                entity.Property(e => e.CreateBy)
+                    .IsRequired()
+                    .HasMaxLength(100)
+                    .IsUnicode(false)
+                    .HasColumnName("CREATE_BY")
+                    .HasDefaultValueSql("('ADMIN')");
+
+                entity.Property(e => e.CreateDate)
+                    .HasColumnType("date")
+                    .HasColumnName("CREATE_DATE")
+                    .HasDefaultValueSql("(getdate())");
+
+                entity.Property(e => e.NameSubscription)
+                    .IsRequired()
+                    .HasMaxLength(250)
+                    .IsUnicode(false)
+                    .HasColumnName("NAME_SUBSCRIPTION");
+
+                entity.Property(e => e.Pricing)
+                    .HasColumnType("decimal(38, 0)")
+                    .HasColumnName("PRICING");
+
+                entity.Property(e => e.TypeSubscription)
+                    .IsRequired()
+                    .HasMaxLength(200)
+                    .IsUnicode(false)
+                    .HasColumnName("TYPE_SUBSCRIPTION");
+
+                entity.Property(e => e.UpdateBy)
+                    .IsRequired()
+                    .HasMaxLength(100)
+                    .IsUnicode(false)
+                    .HasColumnName("UPDATE_BY")
+                    .HasDefaultValueSql("('ADMIN')");
+
+                entity.Property(e => e.UpdateDate)
+                    .HasColumnType("date")
+                    .HasColumnName("UPDATE_DATE")
+                    .HasDefaultValueSql("(getdate())");
+            });
+
+            modelBuilder.Entity<RefSubscriptionPack>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("REF_SUBSCRIPTION_PACK");
+
+                entity.Property(e => e.CreateBy)
+                    .IsRequired()
+                    .HasMaxLength(100)
+                    .IsUnicode(false)
+                    .HasColumnName("CREATE_BY")
+                    .HasDefaultValueSql("('ADMIN')");
+
+                entity.Property(e => e.CreateDate)
+                    .HasColumnType("date")
+                    .HasColumnName("CREATE_DATE")
+                    .HasDefaultValueSql("(getdate())");
+
+                entity.Property(e => e.DurationHour).HasColumnName("DURATION_HOUR");
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("ID")
+                    .HasDefaultValueSql("(newid())");
+
+                entity.Property(e => e.IdSubscription).HasColumnName("ID_SUBSCRIPTION");
+
+                entity.Property(e => e.IsAdditionalService).HasColumnName("IS_ADDITIONAL_SERVICE");
+
+                entity.Property(e => e.SubscriptionPackName)
+                    .IsRequired()
+                    .HasMaxLength(250)
+                    .IsUnicode(false)
+                    .HasColumnName("SUBSCRIPTION_PACK_NAME");
+
+                entity.Property(e => e.UpdateBy)
+                    .IsRequired()
+                    .HasMaxLength(100)
+                    .IsUnicode(false)
+                    .HasColumnName("UPDATE_BY")
+                    .HasDefaultValueSql("('ADMIN')");
+
+                entity.Property(e => e.UpdateDate)
+                    .HasColumnType("date")
+                    .HasColumnName("UPDATE_DATE")
+                    .HasDefaultValueSql("(getdate())");
+
+                entity.HasOne(d => d.IdSubscriptionNavigation)
+                    .WithMany()
+                    .HasForeignKey(d => d.IdSubscription)
+                    .HasConstraintName("REF_SUBSCRIPTION_PACK_FK");
+            });
+
+            modelBuilder.Entity<Repository>(entity =>
+            {
+                entity.ToTable("REPOSITORY");
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("ID")
+                    .HasDefaultValueSql("(newid())");
+
+                entity.Property(e => e.Code)
+                    .IsRequired()
+                    .HasMaxLength(100)
+                    .IsUnicode(false)
+                    .HasColumnName("CODE");
+
+                entity.Property(e => e.CreateBy)
+                    .IsRequired()
+                    .HasMaxLength(250)
+                    .IsUnicode(false)
+                    .HasColumnName("CREATE_BY");
+
+                entity.Property(e => e.CreateDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("CREATE_DATE")
+                    .HasDefaultValueSql("(getdate())");
+
+                entity.Property(e => e.Description)
+                    .IsUnicode(false)
+                    .HasColumnName("DESCRIPTION");
+
+                entity.Property(e => e.Extension)
+                    .IsRequired()
+                    .HasMaxLength(20)
+                    .IsUnicode(false)
+                    .HasColumnName("EXTENSION");
+
+                entity.Property(e => e.FileName)
+                    .IsRequired()
+                    .HasMaxLength(150)
+                    .IsUnicode(false)
+                    .HasColumnName("FILE_NAME");
+
+                entity.Property(e => e.IsPublic).HasColumnName("IS_PUBLIC");
+
+                entity.Property(e => e.MimeType)
+                    .IsRequired()
+                    .HasMaxLength(100)
+                    .HasColumnName("MIME_TYPE");
+
+                entity.Property(e => e.Modul)
+                    .IsRequired()
+                    .HasMaxLength(150)
+                    .IsUnicode(false)
+                    .HasColumnName("MODUL");
+            });
+
+            modelBuilder.Entity<Role>(entity =>
+            {
+                entity.ToTable("ROLE");
+
+                entity.Property(e => e.Id)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("ID");
+
+                entity.Property(e => e.Active).HasColumnName("ACTIVE");
+
+                entity.Property(e => e.CreateBy)
+                    .IsRequired()
+                    .HasMaxLength(250)
+                    .IsUnicode(false)
+                    .HasColumnName("CREATE_BY");
+
+                entity.Property(e => e.CreateDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("CREATE_DATE")
+                    .HasDefaultValueSql("(getdate())");
+
+                entity.Property(e => e.Name)
+                    .IsRequired()
+                    .HasMaxLength(100)
+                    .IsUnicode(false)
+                    .HasColumnName("NAME");
+
+                entity.Property(e => e.UpdateBy)
+                    .HasMaxLength(250)
+                    .IsUnicode(false)
+                    .HasColumnName("UPDATE_BY");
+
+                entity.Property(e => e.UpdateDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("UPDATE_DATE");
+            });
+
+            modelBuilder.Entity<TrsMidtransResponseTransaction>(entity =>
+            {
+                entity.ToTable("TRS_MIDTRANS_RESPONSE_TRANSACTION");
 
                 entity.Property(e => e.Id)
                     .HasColumnName("ID")
@@ -182,158 +472,63 @@ namespace Midtrans.Payment.Data
                     .HasColumnName("VA_NUMBER");
             });
 
-            modelBuilder.Entity<Notification>(entity =>
+            modelBuilder.Entity<TrsSubscription>(entity =>
             {
-                entity.ToTable("NOTIFICATION");
+                entity.ToTable("TRS_SUBSCRIPTION");
 
                 entity.Property(e => e.Id)
-                    .HasColumnName("ID")
-                    .HasDefaultValueSql("(newid())");
+                    .ValueGeneratedNever()
+                    .HasColumnName("ID");
 
-                entity.Property(e => e.CreateBy)
-                    .IsRequired()
-                    .HasMaxLength(250)
-                    .IsUnicode(false)
-                    .HasColumnName("CREATE_BY");
+                entity.Property(e => e.DurationOfUse).HasColumnName("DURATION_OF_USE");
 
-                entity.Property(e => e.CreateDate)
-                    .HasColumnType("datetime")
-                    .HasColumnName("CREATE_DATE")
-                    .HasDefaultValueSql("(getdate())");
+                entity.Property(e => e.IdGuest).HasColumnName("ID_GUEST");
 
-                entity.Property(e => e.Description)
-                    .IsRequired()
-                    .HasMaxLength(250)
-                    .IsUnicode(false)
-                    .HasColumnName("DESCRIPTION");
+                entity.Property(e => e.IdSubscription).HasColumnName("ID_SUBSCRIPTION");
 
                 entity.Property(e => e.IdUser).HasColumnName("ID_USER");
 
-                entity.Property(e => e.IsOpen).HasColumnName("IS_OPEN");
-
-                entity.Property(e => e.Navigation)
+                entity.Property(e => e.PaymentMethod)
                     .IsRequired()
                     .HasMaxLength(250)
                     .IsUnicode(false)
-                    .HasColumnName("NAVIGATION");
+                    .HasColumnName("PAYMENT_METHOD");
 
-                entity.Property(e => e.Subject)
+                entity.Property(e => e.PaymentStatus)
                     .IsRequired()
-                    .HasMaxLength(50)
+                    .HasMaxLength(250)
                     .IsUnicode(false)
-                    .HasColumnName("SUBJECT");
+                    .HasColumnName("PAYMENT_STATUS");
 
-                entity.Property(e => e.UserFullname)
-                    .IsRequired()
-                    .HasMaxLength(150)
-                    .IsUnicode(false)
-                    .HasColumnName("USER_FULLNAME");
+                entity.Property(e => e.ScheduledDate)
+                    .HasColumnType("date")
+                    .HasColumnName("SCHEDULED_DATE");
 
-                entity.Property(e => e.UserMail)
-                    .HasMaxLength(150)
-                    .HasColumnName("USER_MAIL");
+                entity.Property(e => e.ScheduledHours)
+                    .HasColumnType("time(0)")
+                    .HasColumnName("SCHEDULED_HOURS");
 
-                entity.Property(e => e.UserPhone)
-                    .HasMaxLength(50)
-                    .HasColumnName("USER_PHONE");
+                entity.Property(e => e.TransactionDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("TRANSACTION_DATE")
+                    .HasDefaultValueSql("(getdate())");
+
+                entity.HasOne(d => d.IdGuestNavigation)
+                    .WithMany(p => p.TrsSubscription)
+                    .HasForeignKey(d => d.IdGuest)
+                    .OnDelete(DeleteBehavior.Cascade)
+                    .HasConstraintName("TRS_SUBSCRIPTION_FK_1");
+
+                entity.HasOne(d => d.IdSubscriptionNavigation)
+                    .WithMany(p => p.TrsSubscription)
+                    .HasForeignKey(d => d.IdSubscription)
+                    .HasConstraintName("TRS_SUBSCRIPTION_FK_2");
 
                 entity.HasOne(d => d.IdUserNavigation)
-                    .WithMany(p => p.Notification)
+                    .WithMany(p => p.TrsSubscription)
                     .HasForeignKey(d => d.IdUser)
-                    .HasConstraintName("NOTIFICATION_FK");
-            });
-
-            modelBuilder.Entity<Repository>(entity =>
-            {
-                entity.ToTable("REPOSITORY");
-
-                entity.Property(e => e.Id)
-                    .HasColumnName("ID")
-                    .HasDefaultValueSql("(newid())");
-
-                entity.Property(e => e.Code)
-                    .IsRequired()
-                    .HasMaxLength(100)
-                    .IsUnicode(false)
-                    .HasColumnName("CODE");
-
-                entity.Property(e => e.CreateBy)
-                    .IsRequired()
-                    .HasMaxLength(250)
-                    .IsUnicode(false)
-                    .HasColumnName("CREATE_BY");
-
-                entity.Property(e => e.CreateDate)
-                    .HasColumnType("datetime")
-                    .HasColumnName("CREATE_DATE")
-                    .HasDefaultValueSql("(getdate())");
-
-                entity.Property(e => e.Description)
-                    .IsUnicode(false)
-                    .HasColumnName("DESCRIPTION");
-
-                entity.Property(e => e.Extension)
-                    .IsRequired()
-                    .HasMaxLength(20)
-                    .IsUnicode(false)
-                    .HasColumnName("EXTENSION");
-
-                entity.Property(e => e.FileName)
-                    .IsRequired()
-                    .HasMaxLength(150)
-                    .IsUnicode(false)
-                    .HasColumnName("FILE_NAME");
-
-                entity.Property(e => e.IsPublic).HasColumnName("IS_PUBLIC");
-
-                entity.Property(e => e.MimeType)
-                    .IsRequired()
-                    .HasMaxLength(100)
-                    .HasColumnName("MIME_TYPE");
-
-                entity.Property(e => e.Modul)
-                    .IsRequired()
-                    .HasMaxLength(150)
-                    .IsUnicode(false)
-                    .HasColumnName("MODUL");
-            });
-
-            modelBuilder.Entity<Role>(entity =>
-            {
-                entity.ToTable("ROLE");
-
-                entity.Property(e => e.Id)
-                    .HasMaxLength(50)
-                    .IsUnicode(false)
-                    .HasColumnName("ID");
-
-                entity.Property(e => e.Active).HasColumnName("ACTIVE");
-
-                entity.Property(e => e.CreateBy)
-                    .IsRequired()
-                    .HasMaxLength(250)
-                    .IsUnicode(false)
-                    .HasColumnName("CREATE_BY");
-
-                entity.Property(e => e.CreateDate)
-                    .HasColumnType("datetime")
-                    .HasColumnName("CREATE_DATE")
-                    .HasDefaultValueSql("(getdate())");
-
-                entity.Property(e => e.Name)
-                    .IsRequired()
-                    .HasMaxLength(100)
-                    .IsUnicode(false)
-                    .HasColumnName("NAME");
-
-                entity.Property(e => e.UpdateBy)
-                    .HasMaxLength(250)
-                    .IsUnicode(false)
-                    .HasColumnName("UPDATE_BY");
-
-                entity.Property(e => e.UpdateDate)
-                    .HasColumnType("datetime")
-                    .HasColumnName("UPDATE_DATE");
+                    .OnDelete(DeleteBehavior.Cascade)
+                    .HasConstraintName("TRS_SUBSCRIPTION_FK");
             });
 
             modelBuilder.Entity<User>(entity =>

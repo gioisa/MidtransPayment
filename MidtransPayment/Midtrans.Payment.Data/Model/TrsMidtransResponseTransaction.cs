@@ -5,7 +5,7 @@ using Vleko.DAL.Interface;
 
 namespace Midtrans.Payment.Data.Model 
 {
-    public partial class MstMidtransResponseTransaction : IEntity
+    public partial class TrsMidtransResponseTransaction : IEntity
     {
         public Guid Id { get; set; }
         public string Acquirer { get; set; }

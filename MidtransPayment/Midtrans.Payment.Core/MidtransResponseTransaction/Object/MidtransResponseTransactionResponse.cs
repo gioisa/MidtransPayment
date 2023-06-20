@@ -16,7 +16,7 @@ using Midtrans.Payment.Data.Model;
 
 namespace Midtrans.Payment.Core.Response
 {
-    public partial class MidtransResponseTransactionResponse: IMapResponse<MidtransResponseTransactionResponse, Midtrans.Payment.Data.Model.MstMidtransResponseTransaction>
+    public partial class MidtransResponseTransactionResponse: IMapResponse<MidtransResponseTransactionResponse, Midtrans.Payment.Data.Model.TrsMidtransResponseTransaction>
     {
 		public string Acquirer{ get; set; }
 		public string ApprovalCode{ get; set; }
@@ -51,7 +51,7 @@ namespace Midtrans.Payment.Core.Response
 		public string VaNumber{ get; set; }
 
 
-        public void Mapping(IMappingExpression<Midtrans.Payment.Data.Model.MstMidtransResponseTransaction, MidtransResponseTransactionResponse> map)
+        public void Mapping(IMappingExpression<Midtrans.Payment.Data.Model.TrsMidtransResponseTransaction, MidtransResponseTransactionResponse> map)
         {
             //use this for mapping
             //map.ForMember(d => d.object, opt => opt.MapFrom(s => s.EF_COLUMN));

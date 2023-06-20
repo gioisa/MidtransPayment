@@ -57,14 +57,14 @@ namespace Midtrans.Payment.Core.MidtransResponseTransaction.Command
             StatusResponse result = new StatusResponse();
             try
             {
-                var check_payment_statyus = await _context.Entity<MstMidtransResponseTransaction>()
+                var check_payment_statyus = await _context.Entity<TrsMidtransResponseTransaction>()
                     .Where(x => x.PaymentType == request.payment_type).Where(x => x.OrderId == request.order_id)
                     .Where(x => x.MerchantId == request.merchant_id).FirstOrDefaultAsync();
 
                 if(check_payment_statyus == null)
                 {
                     #region Add Data
-                    Midtrans.Payment.Data.Model.MstMidtransResponseTransaction data_payment = new();
+                    Midtrans.Payment.Data.Model.TrsMidtransResponseTransaction data_payment = new();
                     data_payment.Issuer = request.issuer;
 
                     DateTime transaction_time = DateTime.Now;

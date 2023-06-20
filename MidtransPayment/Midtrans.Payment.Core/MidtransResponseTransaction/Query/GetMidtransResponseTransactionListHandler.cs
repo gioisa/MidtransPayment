@@ -43,11 +43,11 @@ namespace Midtrans.Payment.Core.MidtransResponseTransaction.Query
             ListResponse<MidtransResponseTransactionResponse> result = new ListResponse<MidtransResponseTransactionResponse>();
             try
             {
-				var query = _context.Entity<Midtrans.Payment.Data.Model.MstMidtransResponseTransaction>().AsQueryable();
+				var query = _context.Entity<Midtrans.Payment.Data.Model.TrsMidtransResponseTransaction>().AsQueryable();
 
 				#region Filter
-				Expression<Func<Midtrans.Payment.Data.Model.MstMidtransResponseTransaction, object>> column_sort = null;
-				List<Expression<Func<Midtrans.Payment.Data.Model.MstMidtransResponseTransaction, bool>>> where = new List<Expression<Func<Midtrans.Payment.Data.Model.MstMidtransResponseTransaction, bool>>>();
+				Expression<Func<Midtrans.Payment.Data.Model.TrsMidtransResponseTransaction, object>> column_sort = null;
+				List<Expression<Func<Midtrans.Payment.Data.Model.TrsMidtransResponseTransaction, bool>>> where = new List<Expression<Func<Midtrans.Payment.Data.Model.TrsMidtransResponseTransaction, bool>>>();
 				if (request.Filter != null && request.Filter.Count > 0)
 				{
 					foreach (var f in request.Filter)
@@ -93,10 +93,10 @@ namespace Midtrans.Payment.Core.MidtransResponseTransaction.Query
         }
 
         #region List Utility
-		private (Expression<Func<Midtrans.Payment.Data.Model.MstMidtransResponseTransaction, bool>> where, Expression<Func<Midtrans.Payment.Data.Model.MstMidtransResponseTransaction, object>> order) ListExpression(string search, string field, bool is_where)
+		private (Expression<Func<Midtrans.Payment.Data.Model.TrsMidtransResponseTransaction, bool>> where, Expression<Func<Midtrans.Payment.Data.Model.TrsMidtransResponseTransaction, object>> order) ListExpression(string search, string field, bool is_where)
 		{
-			Expression<Func<Midtrans.Payment.Data.Model.MstMidtransResponseTransaction, object>> result_order = null;
-			Expression<Func<Midtrans.Payment.Data.Model.MstMidtransResponseTransaction, bool>> result_where = null;
+			Expression<Func<Midtrans.Payment.Data.Model.TrsMidtransResponseTransaction, object>> result_order = null;
+			Expression<Func<Midtrans.Payment.Data.Model.TrsMidtransResponseTransaction, bool>> result_where = null;
             if (!string.IsNullOrWhiteSpace(search) && !string.IsNullOrWhiteSpace(field))
             {
                 field = field.Trim().ToLower();

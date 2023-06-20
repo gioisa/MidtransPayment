@@ -10,6 +10,7 @@ namespace Midtrans.Payment.Data.Model
         public User()
         {
             Notification = new HashSet<Notification>();
+            TrsSubscription = new HashSet<TrsSubscription>();
             UserRole = new HashSet<UserRole>();
         }
 
@@ -29,6 +30,7 @@ namespace Midtrans.Payment.Data.Model
         public DateTime? UpdateDate { get; set; }
 
         public virtual ICollection<Notification> Notification { get; set; }
+        public virtual ICollection<TrsSubscription> TrsSubscription { get; set; }
         public virtual ICollection<UserRole> UserRole { get; set; }
     }
 }
