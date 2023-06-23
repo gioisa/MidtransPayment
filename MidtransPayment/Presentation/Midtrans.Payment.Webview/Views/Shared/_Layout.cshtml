@@ -27,9 +27,13 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.4/nouislider.min.css">
 	<link href="~/lib/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
 	<link href="~/lib/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+	<link href="~/lib/bootstrap/scss/bootstrap.css" rel="stylesheet">
 
 	<!-- tagify-css -->
 	<link href="~/lib/tagify/dist/tagify.css" rel="stylesheet">
+
+	<!-- Toastr -->
+	<link rel="stylesheet" href="~/lib/toastr/css/toastr.min.css">
 
 	<!-- Style css -->
 	<link href="~/css/style.css" rel="stylesheet">
@@ -42,7 +46,7 @@
 
 <body data-typography="poppins" data-theme-version="light" data-layout="vertical" data-nav-headerbg="color_2" data-headerbg="color_1" data-sidebar-style="full" data-sidebarbg="color_2" data-sidebar-position="fixed" data-header-position="fixed" data-container="wide" direction="ltr" data-primary="color_1" data-secondary="color_1">
 
-        <main role="main" class="pb-3">
+        <main role="main">
 		@{
 			var routeUrl = this.ViewContext.RouteData.Values["controller"].ToString();
 			var pages = new List<string> { "AdminZone", "MemberZone" };
@@ -89,6 +93,13 @@
 <!-- Vectormap -->
 <script src="~/js/custom.js"></script>
 <script src="~/js/deznav-init.js"></script>
+
+<!-- Toastr -->
+<script src="~/lib/toastr/js/toastr.min.js"></script>
+
+<!-- HELPER -->
+<script src="~/js/helper/general_helper.js"></script>
+<script src="~/js/helper/reqeust_helper.js"></script>
 
 
 <!-- Dashboard 1

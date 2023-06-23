@@ -1,0 +1,96 @@
+﻿@{
+	ViewData["Title"] = "Home Page";
+}
+<style>
+	.vertical-center {
+		/* vertical centering */
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+		/* horizontal centering */
+		margin: 0 auto;
+		display: table;
+	}
+
+	
+</style>
+
+<section style="background-image:url('/images/background/bg-login.png');background-repeat: no-repeat;background-position: center;background-size: cover;overflow:auto;  height: 100vh">
+	<div class="container  vertical-center">
+		<div class="row no-gutters ">
+			<div class="p-0 no-gutters  col-xl-4 col-lg-4 col-md-4 col-sm-12  d-none d-xs-none d-sm-none d-md-block d-lg-block d-xl-block bg-white">
+				<img src="~/images/background/bg-image-login.png" height="100%" class="rounded-left" />
+			</div>
+			<div class="p-0 d-flex no-gutters  col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xs-12 bg-white rounded-right pt-5 justify-content-center" >
+				<div class="custom-tab-1 col-6">
+					<ul class="nav nav-tabs">
+						<li class="nav-item">
+							<a class="nav-link active" data-bs-toggle="tab" href="#home1"><i class="la la-home me-2"></i> Sign In</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" data-bs-toggle="tab" href="#profile1"><i class="la la-user me-2"></i> Sign Up</a>
+						</li>
+						
+					</ul>
+					<div class="tab-content align-items-center" style=" height:370px;overflow-y:auto;">
+						<div class="tab-pane fade show active" id="home1" role="tabpanel">
+							<div class="pt-4">
+								<div class="col-12">
+									<div class="mb-3">
+										<label class="form-label">Username</label>
+										<input type="text" class="form-control">
+									</div>
+									<div class="mb-3">
+										<label class="form-label">Password</label>
+										<input type="text" class="form-control">
+									</div>
+									<div class="mb-3">
+										<button type="button" class="btn btn-block btn-rounded btn-primary">Sign Up</button>
+											<button type="button" class="btn mt-1 btn-block btn-rounded btn-google-plus">
+												Google + 
+											</button>
+										<button type="button" class="btn mt-1 btn-block btn-rounded btn-facebook">
+												Facebook 
+											</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="profile1">
+							<div class="pt-4">
+								<div class="col-12">
+									<div class="mb-3">
+										<label class="form-label">Username</label>
+										<input type="text" class="form-control">
+									</div>
+									<div class="mb-3">
+										<label class="form-label">Password</label>
+										<input type="text" class="form-control">
+									</div>
+									<div class="mb-3">
+										<label class="form-label">Password</label>
+										<input type="text" class="form-control">
+									</div>
+									<div class="mb-3">
+										<label class="form-label">Password</label>
+										<input type="text" class="form-control">
+									</div>
+									<div class="mb-3">
+										<label class="form-label">Password</label>
+										<input type="text" class="form-control">
+									</div>
+									<div class="mb-3">
+										<button type="button" class="btn btn-block btn-rounded btn-primary">Primary</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				
+			</div>
+		</div>
+	</div>
+</section>

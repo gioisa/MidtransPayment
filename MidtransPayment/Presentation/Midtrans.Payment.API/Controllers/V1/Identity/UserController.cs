@@ -7,7 +7,8 @@ using Midtrans.Payment.Core.Request;
 
 namespace Midtrans.Payment.API.Controllers
 {
-    public partial class UserController : BaseController<UserController>
+	[AllowAnonymous]
+	public partial class UserController : BaseController<UserController>
     {
         [AllowAnonymous]
         [HttpPost(template: "register")]
@@ -81,6 +82,6 @@ namespace Midtrans.Payment.API.Controllers
         {
             return Wrapper(await _mediator.Send(new RefreshTokenRequest() { Token = Token.RefreshToken }));
         }
-    }
+	}
 }
 
